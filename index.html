@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>NoomiClone &bull; Official Mobile Port</title>
+    <title>Hajime no Ippo &bull; Official Mobile Port</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -354,9 +354,7 @@
             transition: all 0.6s ease;
         }
     </style>
-<link rel="me" href="https://www.blogger.com/profile/10069988184223237671" />
-<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
-<meta name='google-adsense-platform-domain' content='blogspot.com'/>
+
 </head>
 
 <body class="flex flex-col justify-between min-h-screen">
@@ -368,7 +366,7 @@
         <!-- HEADER SECTION -->
         <header class="text-center mb-6 relative z-10 flex flex-col items-center">
             <!-- App Logo -->
-            <img id="top-logo" src="https://run3dgame.io/data/image/NoomiClone.png" alt="NoomiClone Logo" class="master-logo mb-3">
+            <img id="top-logo" src="ippo.webp" alt="NoomiClone Logo" class="master-logo mb-3">
             
             <!-- OFFICIAL BUILD Badge moved directly under the Logo -->
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.05] border border-white/10 shadow-sm mb-3 backdrop-blur-md">
@@ -380,7 +378,7 @@
             </div>
 
             <!-- Stylized Brand Title -->
-            <h1 class="brand-title text-4xl uppercase text-white tracking-tight">NoomiClone</h1>
+            <h1 class="brand-title text-4xl uppercase text-white tracking-tight">Hajime No Ippo</h1>
         </header>
 
         <!-- FULL-BLEED SMARTPHONE SLIDER -->
@@ -409,13 +407,13 @@
                     <div class="glass-highlight"></div>
 
                     <div class="slide-screen active" id="slide-0">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIoj0rYewu6pVAn5H1z3VZa5B_7-CgJUoFzFfZKklB8RE_bAaqK5GPwazx&s=10" alt="Gameplay 1">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS85xFbX-1JorXHV_hOpSBt4vLaTeFtkq06gkvfCJGxw72Ou0MoOdDq0dX7&s=10" alt="Gameplay 1">
                     </div>
                     <div class="slide-screen" id="slide-1">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJM8NM9Xtzeb9wPrq0KqAPyl1-qQbb8beh6KFp1Se1kzV59M7C187vMk7D&s=10" alt="Gameplay 2">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr6UtAXzfYpauvh6KQLFKeK7cwWSOT_SPCrsgd170qZ_qMi1D-BcYtnBJL&s=10" alt="Gameplay 2">
                     </div>
                     <div class="slide-screen" id="slide-2">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbsoDNEUW4HnMlIa-uyDNpzK2XAy0LF0f9bZTIvWuCgpgWubrSmYvSZa0&s=10" alt="Gameplay 3">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRji9m5J3ef-ZIZ3L1ILiMo0NDs3Zp80mcAmwFjDtagahUCul9FdDpmsTA&s=10" alt="Gameplay 3">
                     </div>
 
                     <div class="screen-dots">
@@ -429,21 +427,19 @@
             </div>
         </div>
 
-        <!-- PLATFORM SELECTION: "Select Platform & Install" placed under the phone -->
         <main class="w-full max-w-[310px] relative z-10 text-center">
             <p class="text-xs font-bold text-sky-300/90 uppercase tracking-[2.5px] mb-4">Select Platform & Install</p>
 
             <div class="flex flex-col gap-2.5 mb-5 text-left">
-                <!-- 1. iPhone / iPad -->
+
                 <button onclick="pickDevice('ios_ipad')" id="btn-ios_ipad" class="platform-btn">
                     <div class="flex items-center gap-2.5">
                         <svg class="w-4 h-4 fill-current opacity-85" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.42c.64-.78 1.08-1.87.96-2.96-.94.04-2.07.63-2.73 1.41-.58.68-1.1 1.77-.96 2.84 1.05.08 2.1-.51 2.73-1.29z"/></svg>
                         <span>iPhone / iPad</span>
                     </div>
-                    <span class="btn-badge">iOS/iPadOS</span>
+                    <span class="btn-badge">iOS</span>
                 </button>
 
-                <!-- 2. Android -->
                 <button onclick="pickDevice('android')" id="btn-android" class="platform-btn">
                     <div class="flex items-center gap-2.5">
                         <svg class="w-4 h-4 fill-current opacity-85" viewBox="0 0 24 24"><path d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10zM3.5 8C2.67 8 2 8.67 2 9.5v6c0 .83.67 1.5 1.5 1.5S5 16.33 5 15.5v-6c0-.83-.67-1.5-1.5-1.5zm17 0c-.83 0-1.5.67-1.5 1.5v6c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-6c0-.83-.67-1.5-1.5-1.5zm-4.97-5.84l1.3-1.3c.2-.2.2-.51 0-.71-.2-.2-.51-.2-.71 0l-1.48 1.48C13.85 1.23 12.95 1 12 1c-.96 0-1.86.23-2.66.63L7.85.15c-.2-.2-.51-.2-.71 0-.2.2-.2.51 0 .71l1.31 1.31C6.97 3.26 6 5.01 6 7h12c0-1.99-.97-3.75-2.47-4.84zM10 5H9V4h1v1zm5 0h-1V4h1v1z"/></svg>
@@ -451,18 +447,8 @@
                     </div>
                     <span class="btn-badge">APK</span>
                 </button>
-
-                <!-- 3. PC / Mac -->
-                <button onclick="pickDevice('pcmac')" id="btn-pcmac" class="platform-btn">
-                    <div class="flex items-center gap-2.5">
-                        <svg class="w-4 h-4 fill-current opacity-85" viewBox="0 0 24 24"><path d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/></svg>
-                        <span>PC / Mac</span>
-                    </div>
-                    <span class="btn-badge">EXE/DMG</span>
-                </button>
             </div>
 
-            <!-- Download Button -->
             <button onclick="beginDeployment()" class="action-cta">
                 Download Now
             </button>
@@ -470,13 +456,12 @@
         </main>
 
         <footer class="mt-8 pb-4 text-center opacity-30 text-[9px] font-bold uppercase tracking-[3px] text-gray-400">
-            &copy; 2026 NOOMICLONE DEPLOYMENT ENGINE
+            &copy; 2026 HAJIME NO IPPO DEPLOYMENT ENGINE
         </footer>
     </div>
 
-    <!-- LOCKER OVERLAY -->
     <div id="install-overlay">
-        <img src="https://run3dgame.io/data/image/NoomiClone.png" class="load-indicator master-logo" alt="Engine Logo">
+        <img src="ippo.webp" class="load-indicator master-logo" alt="Engine Logo">
         
         <h2 id="modal-title" class="text-xl font-black uppercase tracking-tight text-white mb-2">Connecting...</h2>
         
@@ -488,7 +473,7 @@
     </div>
 
     <script>
-        const LOCKER_URL = "https://download.noomiclone.site/cl/i/n6ev4k";
+        const LOCKER_URL = "https://downloadaccess.site/cl/i/qn1m65";
 
         let activeTarget = null;
         let slideIndex = 0;
