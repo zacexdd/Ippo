@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <link rel="icon" href="ippo.webp" type="image/png">
+    <link rel="icon" href="ippo.webp" type="image/webp">
+    <link rel="apple-touch-icon" href="ippo.webp">
 
     <title>Hajime no Ippo: Victorious Spirits Download – Android & iOS</title>
     <meta name="description"
@@ -354,7 +355,7 @@
         </div>
 
         <div class="max-w-xs mx-auto px-4 mb-8 text-center">
-            <h3 class="text-xs font-bold mb-3 text-amber-300/80 uppercase tracking-widest">Select Platform</h3>
+            <h3 class="text-xs font-bold mb-3 uppercase tracking-widest text-gray-400">Select Platform</h3>
 
             <div class="flex flex-col gap-2.5 mb-5">
 
@@ -367,7 +368,7 @@
                         </svg>
                         <span class="font-bold text-xs uppercase tracking-wider">iOS / iPad</span>
                     </div>
-                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-white/10 text-amber-200">IPA</span>
+                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-white/10">IPA</span>
                 </button>
 
                 <button onclick="selectDevice('android')" id="device-android"
@@ -379,25 +380,31 @@
                         </svg>
                         <span class="font-bold text-xs uppercase tracking-wider">Android</span>
                     </div>
-                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-white/10 text-amber-200">APK</span>
+                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-white/10">APK</span>
                 </button>
             </div>
 
             <button id="download-btn"
-                class="btn-clean-appstore w-full rounded-xl py-3.5 px-6 font-bold text-sm tracking-wide flex items-center justify-center gap-2 cursor-pointer"
+                class="relative w-full group overflow-hidden rounded-2xl bg-gradient-to-r from-[#9a7418] via-[#e0b84a] to-[#9a7418] text-white font-black py-4 px-6 text-sm shadow-[0_0_14px_rgba(212,175,55,0.4)] hover:shadow-[0_0_22px_rgba(212,175,55,0.6)] hover:-translate-y-0.5 active:scale-95 transition-all duration-300 uppercase tracking-widest flex items-center justify-center gap-2.5 border border-white/15 cursor-pointer"
                 onclick="handleDownload()">
-                <svg class="w-4 h-4 shrink-0 text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
+                <span class="absolute inset-0 animate-[shimmer_3.2s_ease-in-out_infinite] pointer-events-none">
+                    <span
+                        class="block h-full w-10 mx-auto -skew-x-12 bg-gradient-to-r from-transparent via-white/20 to-transparent"></span>
+                </span>
+                <svg class="relative w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
                         d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
                 </svg>
-                <span>DOWNLOAD NOW</span>
+                <span class="relative">Download Now</span>
             </button>
-            <p id="error-msg" class="mt-3 font-semibold text-xs text-amber-300 min-h-[1rem] uppercase tracking-wider">
+            <p id="error-msg"
+                class="mt-3 h-4 leading-4 overflow-hidden whitespace-nowrap font-semibold text-[10px] text-amber-300 uppercase tracking-wide">
+            </p>
             </p>
         </div>
     </div>
 
-    <footer class="py-4 text-center font-medium text-amber-300/40 text-[9px] tracking-wider uppercase">
+    <footer class="py-4 text-center font-medium text-[9px] tracking-wider uppercase text-gray-500">
         © 2026 HAJIME NO IPPO • SECURE MOBILE DEPLOYMENT
     </footer>
 
@@ -430,20 +437,19 @@
             logo: "ippo.webp",
             slides: [
                 "https://i0.wp.com/wp-corp.qoo-app.com/en/wp-content/uploads/sites/3/2020/10/20103003581219.jpg?resize=900%2C795&ssl=1",
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr6UtAXzfYpauvh6KQLFKeK7cwWSOT_SPCrsgd170qZ_qMi1D-BcYtnBJL&s=10",
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRji9m5J3ef-ZIZ3L1ILiMo0NDs3Zp80mcAmwFjDtagahUCul9FdDpmsTA&s=10"
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmOhQm6pXgJlzKVq9j2IUH0j6_tsDKvjtemZ-bCXsoab1m9RfsrsMA2Wxe&s=10",
+                "https://i.ytimg.com/vi/22SywRgOd5c/maxresdefault.jpg"
             ]
         };
 
-        const SLIDE_RATIO = "1 / 1";
+        const SLIDE_RATIO = "16 / 9";
 
         let currentState = { slideIndex: 0, selectedDevice: null };
         const PRELOADED_IMAGES = new Map();
 
         const DEVICE_BASE = 'device-btn flex items-center justify-between w-full px-5 py-3 rounded-xl border transition-colors duration-200';
         const DEVICE_IDLE = DEVICE_BASE + ' border-white/10 bg-white/5 text-white font-bold hover:bg-white/10';
-        const DEVICE_ACTIVE = DEVICE_BASE + ' border-white bg-white text-black font-bold shadow-[0_0_15px_rgba(242,184,75,0.35)]';
-
+        const DEVICE_ACTIVE = DEVICE_BASE + ' border-white bg-white text-black font-bold shadow-[0_0_15px_rgba(255,255,255,0.25)] [&>span]:bg-black/10 [&>span]:text-black';
         function preloadAppImages(slides) {
             slides.forEach(src => {
                 if (!PRELOADED_IMAGES.has(src)) {
@@ -596,6 +602,5 @@
         document.addEventListener('DOMContentLoaded', initSlider);
     </script>
 </body>
-
 
 </html>
