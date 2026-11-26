@@ -8,7 +8,7 @@
     <link rel="icon" href="ippo.webp" type="image/webp">
     <link rel="apple-touch-icon" href="ippo.webp">
 
-    <title>Hajime no Ippo: Victorious Spirits Download – Android & iOS</title>
+    <title>Hajime no Ippo: Victorious Spirits Download – Android &amp; iOS</title>
     <meta name="description"
         content="Download Hajime no Ippo: Victorious Spirits on Android and iOS. Get step-by-step install guides, gameplay tips, and the latest game updates at IppoGame.">
 
@@ -18,7 +18,7 @@
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ippogame.xyz/">
-    <meta property="og:title" content="Hajime no Ippo: Victorious Spirits Download – Android & iOS">
+    <meta property="og:title" content="Hajime no Ippo: Victorious Spirits Download – Android &amp; iOS">
     <meta property="og:description"
         content="Download Hajime no Ippo: Victorious Spirits on Android and iOS. Get step-by-step install guides, gameplay tips, and the latest game updates at IppoGame.">
     <meta property="og:image" content="https://ippogame.xyz/ippo.webp">
@@ -26,48 +26,48 @@
     <meta property="og:site_name" content="IppoGame">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Hajime no Ippo: Victorious Spirits Download – Android & iOS">
+    <meta name="twitter:title" content="Hajime no Ippo: Victorious Spirits Download – Android &amp; iOS">
     <meta name="twitter:description"
         content="Download Hajime no Ippo: Victorious Spirits on Android and iOS. Get step-by-step install guides, gameplay tips, and the latest game updates at IppoGame.">
     <meta name="twitter:image" content="https://ippogame.xyz/ippo.webp">
 
-    <script src="https://cdn.tailwindcss.com">
-    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&family=Oswald:wght@600;700&display=swap"
         rel="stylesheet">
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brandLight: '#f2b84b',
-                        brandDark: '#c62828',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        oswald: ['Oswald', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace']
-                    }
-                }
-            }
-        }
-    </script>
-
     <style>
         :root {
             --brand-primary: #c62828;
+            --brand-light: #f2b84b;
+            --brand-dark: #c62828;
             --brand-glow: rgba(198, 40, 40, 0.4);
             --bg-deep: #101113;
+            --font-sans: 'Inter', sans-serif;
+            --font-oswald: 'Oswald', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            min-height: 100%;
+            line-height: 1.5;
+            -webkit-text-size-adjust: 100%;
         }
 
         body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             min-height: 100vh;
+            min-height: 100svh;
+            margin: 0;
             overflow-x: hidden;
-            font-family: 'Inter', sans-serif;
+            font-family: var(--font-sans);
             background-color: var(--bg-deep);
             background-image:
                 radial-gradient(ellipse 90% 50% at 50% -5%, rgba(198, 40, 40, 0.22) 0%, rgba(242, 184, 75, 0.08) 45%, transparent 70%),
@@ -76,17 +76,26 @@
             transition: background-color 0.4s ease;
         }
 
+        button {
+            font: inherit;
+        }
+
+        .main-content {
+            flex: 1;
+            transition: all 1s;
+        }
+
         .btn-clean-appstore {
+            border: 1px solid rgba(255, 255, 255, 0.9);
             background-color: #ffffff;
             color: #0c0812;
-            border: 1px solid rgba(255, 255, 255, 0.9);
             box-shadow: 0 4px 14px -2px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.08);
             transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .btn-clean-appstore:hover {
-            background-color: #f8fafc;
             transform: translateY(-1.5px);
+            background-color: #f8fafc;
             box-shadow: 0 8px 20px -3px rgba(0, 0, 0, 0.5), 0 0 15px rgba(242, 184, 75, 0.2);
         }
 
@@ -95,90 +104,160 @@
             background-color: #e2e8f0;
         }
 
-        .progress-bar-fill {
-            width: 0%;
-            transition: width 1.2s cubic-bezier(0.65, 0, 0.35, 1);
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(90deg, #c62828, #f2b84b);
-            box-shadow: 0 0 18px rgba(242, 184, 75, 0.55);
-        }
-
-        .progress-bar-fill::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.7), transparent);
-            animation: shimmer 1.5s infinite;
-        }
-
-        @keyframes shimmer {
-            0% {
-                transform: translateX(-100%);
-            }
-
-            100% {
-                transform: translateX(100%);
-            }
-        }
-
-        #install-overlay {
-            display: none;
-            backdrop-filter: blur(28px);
-            -webkit-backdrop-filter: blur(28px);
-            background: rgba(12, 12, 13, 0.97);
-            transition: opacity 0.6s ease-in-out;
+        .fade-out-zoom {
             opacity: 0;
+            transform: scale(0.98);
+            pointer-events: none;
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1rem 1.25rem;
+            text-align: center;
         }
 
         .app-icon-frame {
-            border-radius: 22%;
-            background: #1c1c1e;
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
+            width: 6rem;
+            height: 6rem;
+            margin-bottom: 0.75rem;
             overflow: hidden;
-            box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.7), inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+            border-radius: 22%;
+            background: #1c1c1e;
+            box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.7), inset 0 0 0 1px rgba(255, 255, 255, 0.15), 0 0 30px rgba(198, 40, 40, 0.35);
+            transition: transform 0.3s;
+        }
+
+        .app-icon-frame:hover {
+            transform: scale(1.05);
         }
 
         .app-icon-frame img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
             border-radius: 22%;
+            object-fit: cover;
+        }
+
+        .build-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+            padding: 0.25rem 0.875rem;
+            border: 1px solid rgba(251, 191, 36, 0.25);
+            border-radius: 9999px;
+            background: rgba(239, 68, 68, 0.10);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        .live-indicator {
+            position: relative;
+            display: flex;
+            width: 0.5rem;
+            height: 0.5rem;
+        }
+
+        .live-indicator-ping,
+        .live-indicator-dot {
+            position: absolute;
+            display: inline-flex;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: #fbbf24;
+        }
+
+        .live-indicator-ping {
+            animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+            opacity: 0.75;
+        }
+
+        .live-indicator-dot {
+            position: relative;
+        }
+
+        @keyframes ping {
+
+            75%,
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+
+        .build-label {
+            margin: 0;
+            color: #fde68a;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            line-height: 1.5;
+            text-transform: uppercase;
+        }
+
+        .offer-title {
+            margin: 0 0 0.25rem;
+            color: #ffffff;
+            font-family: var(--font-oswald);
+            font-size: 2.25rem;
+            font-weight: 900;
+            letter-spacing: -0.025em;
+            line-height: 1.1;
+            text-transform: uppercase;
+        }
+
+        .offer-desc {
+            max-width: 20rem;
+            margin: 0;
+            color: rgba(253, 230, 138, 0.8);
+            font-family: var(--font-oswald);
+            font-size: 0.875rem;
+            font-weight: 500;
+            line-height: 1.25;
         }
 
         .slider-wrapper {
             position: relative;
             width: 100%;
             max-width: 440px;
-            margin: 0 auto 1.75rem auto;
+            margin: 0 auto 1.75rem;
+            padding: 0 1rem;
             line-height: 0;
         }
 
         .slider-viewport {
             position: relative;
             width: 100%;
-            border-radius: 1.5rem;
             overflow: hidden;
             border: 1px solid rgba(242, 184, 75, 0.25);
-            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.9), 0 0 25px rgba(219, 39, 119, 0.15);
+            border-radius: 1.5rem;
             background: #171719;
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.9), 0 0 25px rgba(219, 39, 119, 0.15);
             transition: aspect-ratio 0.25s ease-out;
         }
 
-        #slides-container img {
-            position: absolute;
-            inset: 0;
+        .slides-container {
+            position: relative;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+        }
+
+        .slides-container img {
+            position: absolute;
+            inset: 0;
             display: block;
+            width: 100%;
+            height: 100%;
             border-radius: 1.5rem;
+            object-fit: cover;
+            object-position: center;
             transition: opacity 0.35s ease-in-out;
             will-change: opacity;
         }
@@ -186,31 +265,265 @@
         .slider-nav-btn {
             position: absolute;
             top: 50%;
-            transform: translateY(-50%);
             z-index: 25;
-            width: 36px;
-            height: 36px;
             display: flex;
             align-items: center;
             justify-content: center;
+            width: 36px;
+            height: 36px;
+            padding: 0;
+            transform: translateY(-50%);
+            border: 1px solid rgba(242, 184, 75, 0.35);
             border-radius: 9999px;
             background: rgba(12, 12, 13, 0.82);
+            color: #ffffff;
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(242, 184, 75, 0.35);
-            color: #ffffff;
             cursor: pointer;
             transition: all 0.2s ease;
         }
 
         .slider-nav-btn:hover {
-            background: rgba(211, 47, 47, 0.3);
-            border-color: rgba(242, 184, 75, 0.8);
             transform: translateY(-50%) scale(1.08);
+            border-color: rgba(242, 184, 75, 0.8);
+            background: rgba(211, 47, 47, 0.3);
         }
 
         .slider-nav-btn:active {
             transform: translateY(-50%) scale(0.94);
+        }
+
+        .slider-nav-btn svg {
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+
+        .slider-prev {
+            left: 0.75rem;
+        }
+
+        .slider-next {
+            right: 0.75rem;
+        }
+
+        .dots-container {
+            position: absolute;
+            bottom: 0.75rem;
+            left: 50%;
+            z-index: 20;
+            display: flex;
+            gap: 0.375rem;
+            padding: 0.25rem 0.625rem;
+            transform: translateX(-50%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 9999px;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+        }
+
+        .slide-dot {
+            width: 0.375rem;
+            height: 0.375rem;
+            border-radius: 50%;
+            background: #ffffff;
+            opacity: 0.4;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .slide-dot.active {
+            transform: scale(1.25);
+            background: #f2b84b;
+            opacity: 1;
+        }
+
+        .platform-section {
+            max-width: 20rem;
+            margin: 0 auto 2rem;
+            padding: 0 1rem;
+            text-align: center;
+        }
+
+        .platform-heading {
+            margin: 0 0 0.75rem;
+            color: #9ca3af;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            line-height: 1.5;
+            text-transform: uppercase;
+        }
+
+        .device-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.625rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .device-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0.75rem 1.25rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.75rem;
+            color: #ffffff;
+            font-weight: 700;
+            text-align: left;
+            cursor: pointer;
+            transition: background-color 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s;
+        }
+
+        .device-idle {
+            border-color: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+        }
+
+        .device-idle:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .device-active {
+            border-color: #ffffff;
+            background: #ffffff;
+            color: #000000;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.25);
+        }
+
+        .device-active .device-format {
+            background: rgba(0, 0, 0, 0.1);
+            color: #000000;
+        }
+
+        .device-label-group {
+            display: flex;
+            align-items: center;
+            gap: 0.625rem;
+        }
+
+        .device-label-group svg {
+            width: 1rem;
+            height: 1rem;
+            fill: currentColor;
+            opacity: 0.85;
+        }
+
+        .device-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .device-format {
+            padding: 0.125rem 0.5rem;
+            border-radius: 0.25rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: inherit;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .download-btn {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.625rem;
+            width: 100%;
+            overflow: hidden;
+            padding: 1rem 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 1rem;
+            background: linear-gradient(90deg, #9a7418, #e0b84a, #9a7418);
+            box-shadow: 0 0 14px rgba(212, 175, 55, 0.4);
+            color: #ffffff;
+            font-size: 0.875rem;
+            font-weight: 900;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-0.125rem);
+            box-shadow: 0 0 22px rgba(212, 175, 55, 0.6);
+        }
+
+        .download-btn:active {
+            transform: scale(0.95);
+        }
+
+        .download-btn-shimmer {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            animation: shimmer 3.2s ease-in-out infinite;
+        }
+
+        .download-btn-shimmer-line {
+            display: block;
+            width: 2.5rem;
+            height: 100%;
+            margin: 0 auto;
+            transform: skewX(-12deg);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        }
+
+        .download-icon,
+        .download-label {
+            position: relative;
+        }
+
+        .download-icon {
+            flex-shrink: 0;
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+
+        .error-msg {
+            height: 1rem;
+            overflow: hidden;
+            margin: 0.75rem 0 0;
+            color: #fcd34d;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            line-height: 1rem;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .page-footer {
+            padding: 1rem 0;
+            color: #6b7280;
+            font-size: 9px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .install-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 50;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            background: rgba(12, 12, 13, 0.97);
+            text-align: center;
+            opacity: 0;
+            backdrop-filter: blur(28px);
+            -webkit-backdrop-filter: blur(28px);
+            transition: opacity 0.6s ease-in-out;
         }
 
         .overlay-icon-wrapper {
@@ -221,10 +534,10 @@
         .overlay-icon-glow {
             position: absolute;
             inset: -10px;
+            z-index: 0;
+            border-radius: 36px;
             background: radial-gradient(circle, rgba(242, 184, 75, 0.35) 0%, rgba(219, 39, 119, 0.25) 50%, transparent 75%);
             filter: blur(24px);
-            border-radius: 36px;
-            z-index: 0;
             animation: icon-pulse 3s ease-in-out infinite alternate;
         }
 
@@ -243,40 +556,89 @@
         .overlay-icon-card {
             position: relative;
             z-index: 10;
-            width: 110px;
-            height: 110px;
-            border-radius: 26px;
-            background: #1c1c1e;
-            box-shadow:
-                0 20px 40px -10px rgba(0, 0, 0, 0.9),
-                0 0 0 1px rgba(211, 47, 47, 0.3),
-                inset 0 1px 1px 0 rgba(255, 255, 255, 0.4);
             display: flex;
             align-items: center;
             justify-content: center;
+            width: 110px;
+            height: 110px;
             overflow: hidden;
-        }
-
-        @media (min-width: 640px) {
-            .overlay-icon-card {
-                width: 125px;
-                height: 125px;
-                border-radius: 30px;
-            }
+            border-radius: 26px;
+            background: #1c1c1e;
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(211, 47, 47, 0.3), inset 0 1px 1px 0 rgba(255, 255, 255, 0.4);
         }
 
         .overlay-icon-card img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
             border-radius: 24px;
+            object-fit: cover;
         }
 
-        .fade-out-zoom {
-            opacity: 0;
-            transform: scale(0.98);
-            pointer-events: none;
-            transition: opacity 0.8s ease, transform 0.8s ease;
+        .install-title {
+            margin: 0 0 0.75rem;
+            color: #ffffff;
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: -0.025em;
+            line-height: 1.25;
+            text-transform: uppercase;
+        }
+
+        .progress-track {
+            width: 100%;
+            max-width: 20rem;
+            height: 0.375rem;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 9999px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .progress-bar-fill {
+            position: relative;
+            width: 0%;
+            height: 100%;
+            overflow: hidden;
+            background: linear-gradient(90deg, #c62828, #f2b84b);
+            box-shadow: 0 0 18px rgba(242, 184, 75, 0.55);
+            transition: width 1.2s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        .progress-bar-fill::after {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.7), transparent);
+            content: "";
+            animation: shimmer 1.5s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        .status-logs {
+            position: relative;
+            top: -1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 20rem;
+            min-height: 2.5rem;
+            color: rgba(253, 230, 138, 0.6);
+            font-family: var(--font-mono);
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            line-height: 1.5;
+            text-align: center;
+            text-transform: uppercase;
         }
 
         .log-entry {
@@ -294,118 +656,119 @@
                 transform: translateY(0);
             }
         }
+
+        @media (min-width: 640px) {
+            .offer-title {
+                font-size: 3rem;
+            }
+
+            .overlay-icon-card {
+                width: 125px;
+                height: 125px;
+                border-radius: 30px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
     </style>
 </head>
 
-<body class="flex flex-col justify-between min-h-screen">
-
-    <div id="main-content" class="transition-all duration-1000 flex-1">
-
-        <div class="flex flex-col items-center pt-8 pb-5 px-4 text-center">
-            <div
-                class="w-24 h-24 mb-3 app-icon-frame transition-transform hover:scale-105 duration-300 shadow-[0_0_30px_rgba(198,40,40,0.35)]">
+<body>
+    <div id="main-content" class="main-content">
+        <div class="hero">
+            <div class="app-icon-frame">
                 <img id="offer-logo" src="ippo.webp" alt="Hajime no Ippo: Fighting Souls Logo">
             </div>
 
-            <div
-                class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-red-500/[0.10] border border-amber-400/25 shadow-sm mb-3">
-                <span class="relative flex h-2 w-2">
-                    <span
-                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
+            <div class="build-badge">
+                <span class="live-indicator">
+                    <span class="live-indicator-ping"></span>
+                    <span class="live-indicator-dot"></span>
                 </span>
-                <p class="text-[10px] font-bold uppercase tracking-widest text-amber-200">OFFICIAL BUILD • V2.6</p>
+                <p class="build-label">OFFICIAL BUILD • V2.6</p>
             </div>
 
-            <h1 id="offer-title"
-                class="font-oswald text-4xl sm:text-5xl font-black mb-1 tracking-tight uppercase text-white">HAJIME NO
-                IPPO
-            </h1>
-            <p id="offer-desc" class="font-oswald text-sm text-amber-200/80 font-medium max-w-xs leading-tight">
-                VICTORIOUS SPIRITS
-            </p>
+            <h1 id="offer-title" class="offer-title">HAJIME NO IPPO</h1>
+            <p id="offer-desc" class="offer-desc">VICTORIOUS SPIRITS</p>
         </div>
 
-        <div class="slider-wrapper px-4">
+        <div class="slider-wrapper">
             <div id="slider-frame" class="slider-viewport">
-
                 <button type="button" aria-label="Previous slide" onclick="prevSlide(event)"
-                    class="slider-nav-btn left-3">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7">
-                        </path>
+                    class="slider-nav-btn slider-prev">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path>
                     </svg>
                 </button>
 
-                <div id="slides-container" class="relative w-full h-full"></div>
+                <div id="slides-container" class="slides-container"></div>
 
-                <button type="button" aria-label="Next slide" onclick="nextSlide(event)" class="slider-nav-btn right-3">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button type="button" aria-label="Next slide" onclick="nextSlide(event)"
+                    class="slider-nav-btn slider-next">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
                     </svg>
                 </button>
 
-                <div id="dots-container"
-                    class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-20 bg-black/60 px-2.5 py-1 rounded-full backdrop-blur-sm border border-white/10">
-                </div>
+                <div id="dots-container" class="dots-container"></div>
             </div>
         </div>
 
-        <div class="max-w-xs mx-auto px-4 mb-8 text-center">
-            <h3 class="text-xs font-bold mb-3 uppercase tracking-widest text-gray-400">Select Platform</h3>
+        <div class="platform-section">
 
-            <div class="flex flex-col gap-2.5 mb-5">
+            <h3 class="platform-heading">Select Platform</h3>
 
-                <button onclick="selectDevice('ios')" id="device-ios"
-                    class="device-btn flex items-center justify-between w-full px-5 py-3 rounded-xl border border-white/10 bg-white/5 text-white hover:bg-white/10 transition-all duration-200">
-                    <div class="flex items-center gap-2.5">
-                        <svg class="w-4 h-4 fill-current opacity-85" viewBox="0 0 24 24">
-                            <path
-                                d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.42c.64-.78 1.08-1.87.96-2.96-.94.04-2.07.63-2.73 1.41-.58.68-1.1 1.77-.96 2.84 1.05.08 2.1-.51 2.73-1.29z" />
+            <div class="device-list">
+                <button onclick="selectDevice('ios')" id="device-ios" class="device-btn device-idle">
+                    <div class="device-label-group">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.42c.64-.78 1.08-1.87.96-2.96-.94.04-2.07.63-2.73 1.41-.58.68-1.1 1.77-.96 2.84 1.05.08 2.1-.51 2.73-1.29z" />
                         </svg>
-                        <span class="font-bold text-xs uppercase tracking-wider">iOS / iPad</span>
+                        <span class="device-label">iOS / iPad</span>
                     </div>
-                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-white/10">IPA</span>
+                    <span class="device-format">IPA</span>
                 </button>
 
-                <button onclick="selectDevice('android')" id="device-android"
-                    class="device-btn flex items-center justify-between w-full px-5 py-3 rounded-xl border border-white/10 bg-white/5 text-white hover:bg-white/10 transition-all duration-200">
-                    <div class="flex items-center gap-2.5">
-                        <svg class="w-4 h-4 fill-current opacity-85" viewBox="0 0 24 24">
-                            <path
-                                d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10zM3.5 8C2.67 8 2 8.67 2 9.5v6c0 .83.67 1.5 1.5 1.5S5 16.33 5 15.5v-6c0-.83-.67-1.5-1.5-1.5zm17 0c-.83 0-1.5.67-1.5 1.5v6c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-6c0-.83-.67-1.5-1.5-1.5zm-4.97-5.84l1.3-1.3c.2-.2.2-.51 0-.71-.2-.2-.51-.2-.71 0l-1.48 1.48C13.85 1.23 12.95 1 12 1c-.96 0-1.86.23-2.66.63L7.85.15c-.2-.2-.51-.2-.71 0-.2.2-.2.51 0 .71l1.31 1.31C6.97 3.26 6 5.01 6 7h12c0-1.99-.97-3.75-2.47-4.84zM10 5H9V4h1v1zm5 0h-1V4h1v1z" />
+                <button onclick="selectDevice('android')" id="device-android" class="device-btn device-idle">
+                    <div class="device-label-group">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10zM3.5 8C2.67 8 2 8.67 2 9.5v6c0 .83.67 1.5 1.5 1.5S5 16.33 5 15.5v-6c0-.83-.67-1.5-1.5-1.5zm17 0c-.83 0-1.5.67-1.5 1.5v6c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-6c0-.83-.67-1.5-1.5-1.5zm-4.97-5.84l1.3-1.3c.2-.2.2-.51 0-.71-.2-.2-.51-.2-.71 0l-1.48 1.48C13.85 1.23 12.95 1 12 1c-.96 0-1.86.23-2.66.63L7.85.15c-.2-.2-.51-.2-.71 0-.2.2-.2.51 0 .71l1.31 1.31C6.97 3.26 6 5.01 6 7h12c0-1.99-.97-3.75-2.47-4.84zM10 5H9V4h1v1zm5 0h-1V4h1v1z" />
                         </svg>
-                        <span class="font-bold text-xs uppercase tracking-wider">Android</span>
+                        <span class="device-label">Android</span>
                     </div>
-                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-white/10">APK</span>
+                    <span class="device-format">APK</span>
                 </button>
             </div>
 
-            <button id="download-btn"
-                class="relative w-full group overflow-hidden rounded-2xl bg-gradient-to-r from-[#9a7418] via-[#e0b84a] to-[#9a7418] text-white font-black py-4 px-6 text-sm shadow-[0_0_14px_rgba(212,175,55,0.4)] hover:shadow-[0_0_22px_rgba(212,175,55,0.6)] hover:-translate-y-0.5 active:scale-95 transition-all duration-300 uppercase tracking-widest flex items-center justify-center gap-2.5 border border-white/15 cursor-pointer"
-                onclick="handleDownload()">
-                <span class="absolute inset-0 animate-[shimmer_3.2s_ease-in-out_infinite] pointer-events-none">
-                    <span
-                        class="block h-full w-10 mx-auto -skew-x-12 bg-gradient-to-r from-transparent via-white/20 to-transparent"></span>
+            <button id="download-btn" class="download-btn" onclick="handleDownload()">
+                <span class="download-btn-shimmer" aria-hidden="true">
+                    <span class="download-btn-shimmer-line"></span>
                 </span>
-                <svg class="relative w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
                         d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
                 </svg>
-                <span class="relative">Download Now</span>
+                <span class="download-label">Download Now</span>
             </button>
-            <p id="error-msg"
-                class="mt-3 h-4 leading-4 overflow-hidden whitespace-nowrap font-semibold text-[10px] text-amber-300 uppercase tracking-wide">
-            </p>
-            </p>
+            <p id="error-msg" class="error-msg"></p>
         </div>
     </div>
 
-    <footer class="py-4 text-center font-medium text-[9px] tracking-wider uppercase text-gray-500">
+    <footer class="page-footer">
         © 2026 HAJIME NO IPPO • SECURE MOBILE DEPLOYMENT
     </footer>
 
-    <div id="install-overlay" class="fixed inset-0 z-50 flex flex-col items-center justify-center p-6 text-center">
+    <div id="install-overlay" class="install-overlay">
         <div class="overlay-icon-wrapper">
             <div class="overlay-icon-glow"></div>
             <div class="overlay-icon-card">
@@ -413,15 +776,14 @@
             </div>
         </div>
 
-        <h2 id="install-title" class="text-2xl font-black mb-3 tracking-tight uppercase text-white">Connecting...</h2>
+        <h2 id="install-title" class="install-title">Connecting...</h2>
 
-        <div class="w-full max-w-xs h-1.5 bg-white/10 rounded-full overflow-hidden mb-6 border border-white/10">
-            <div id="progress-bar" class="h-full progress-bar-fill"></div>
+        <div class="progress-track">
+            <div id="progress-bar" class="progress-bar-fill"></div>
         </div>
 
-        <div id="status-logs"
-            class="font-mono text-[9px] relative -top-4 text-amber-200/60 space-y-1.5 uppercase tracking-widest font-semibold max-w-xs text-center min-h-[2.5rem] flex items-center justify-center">
-            > PREPARING YOUR FIGHT
+        <div id="status-logs" class="status-logs">
+            &gt; PREPARING YOUR FIGHT
         </div>
     </div>
 
@@ -444,9 +806,9 @@
         let currentState = { slideIndex: 0, selectedDevice: null };
         const PRELOADED_IMAGES = new Map();
 
-        const DEVICE_BASE = 'device-btn flex items-center justify-between w-full px-5 py-3 rounded-xl border transition-colors duration-200';
-        const DEVICE_IDLE = DEVICE_BASE + ' border-white/10 bg-white/5 text-white font-bold hover:bg-white/10';
-        const DEVICE_ACTIVE = DEVICE_BASE + ' border-white bg-white text-black font-bold shadow-[0_0_15px_rgba(255,255,255,0.25)] [&>span]:bg-black/10 [&>span]:text-black';
+        const DEVICE_IDLE = "device-btn device-idle";
+        const DEVICE_ACTIVE = "device-btn device-active";
+
         function preloadAppImages(slides) {
             slides.forEach(src => {
                 if (!PRELOADED_IMAGES.has(src)) {
@@ -489,7 +851,7 @@
                 container.appendChild(img);
 
                 const dot = document.createElement('div');
-                dot.className = `w-1.5 h-1.5 rounded-full transition-all cursor-pointer ${index === 0 ? 'bg-amber-400 opacity-100 scale-125' : 'bg-white opacity-40'}`;
+                dot.className = `slide-dot${index === 0 ? ' active' : ''}`;
                 dot.onclick = () => showSlide(index, IPPO_DATA.slides.length);
                 dot.id = `dot-${index}`;
                 dotsContainer.appendChild(dot);
